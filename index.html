@@ -8,290 +8,465 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Century+Gothic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,80">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.24/daterangepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <header class="hero">
-        <div class="nav-section">
-            <ul class="list-inline header-nav text-center">
-                <li class="h5 menu"> <a href="#" class="active">HOME </a></li>
-                <li class="h5 menu"> <a href="#">ABOUT US</a></li>
-                <li class="h5 active menu"> <a href="#">PACKAGES </a></li>
-                <li class="h5 active menu"> <a href="#">CONTACT US</a></li>
-            </ul>
-        </div>
-        <div>
-            <figure class="center-block logo"><img class="img-responsive" src="assets/img/logo.png"></figure>
-        </div>
-        <div style="margin-top:130px;">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab-1" role="tab" data-toggle="tab"><i class="fa fa-calendar"></i><span>Tours </span></a></li>
+    <div class="container-fluid top-header" id="mainhome">
+        <nav class="navbar navbar-default visible-xs-block" style="margin-top:30px;background:transparent;border:none;box-shadow:none;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" style="background-color:rgba(246,193,0,0.901961);border-radius:3px;box-shadow:none;border-color:transparent;"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav" style="font-weight:600;">
+                        <li class="active" role="presentation"><a href="#mainhome">HOME </a></li>
+                        <li role="presentation"><a href="#mainabout">ABOUT US</a></li>
+                        <li role="presentation"><a href="#mainpackages">PACKAGES </a></li>
+                        <li role="presentation"><a href="#maincontact">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="hidden-xs center-block top-nav text-center">
+            <ul class="list-inline top">
                 <li>
-                    <a href="#tab-2" role="tab" data-toggle="tab"> <span>Flights </span><img src="assets/img/flight-icon.png"></a>
+                    <a href="#mainhome" class="active"> <strong>HOME </strong></a>
                 </li>
+                <li><a href="#mainabout"><strong>ABOUT US</strong></a></li>
+                <li>
+                    <a href="#mainpackages"> <strong>PACKAGES </strong></a>
+                </li>
+                <li><a href="#maincontact"><strong>CONTACT US</strong></a></li>
             </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" role="tabpanel" id="tab-1" style="background-color:#c59a01;">
-                    <section class="center-block" style="max-width:60%;padding:8px;">
-                        <form class="trip" style="color:#000;">
-                            <div class="form-group">
-                                <input type="radio" name="type" checked=""><span style="margin-left:10px; margin-right:20px;">Round-trip </span>
-                                <input type="radio" name="type"><span style="margin-left:10px;">One-way </span></div>
-                            <div class="form-group">
-                                <div>
-                                    <input class="form-control" type="text" placeholder="Departure city" style="display:inline; margin-right:10px">
-                                    <input class="form-control" type="text" placeholder="Arrival city" style="display:inline; margin-right:10px;">
+        </div>
+        <div class="center-block logo"><img class="img-responsive" src="assets/img/logo.png"></div>
+        <div class="hidden-xs flights">
+            <div>
+                <ul class="nav nav-tabs text-center" style="border:none;">
+                    <li><a href="#tab-2" role="tab" data-toggle="tab"><i class="fa fa-calendar"></i>Tours </a></li>
+                    <li class="active"><a href="#tab-1" role="tab" data-toggle="tab">Flights<img src="assets/img/flight-icon.png"> </a></li>
+                </ul>
+                <div class="tab-content flight" style="border:none;">
+                    <div class="tab-pane fade in active" role="tabpanel" id="tab-1" style="border:none;">
+                        <div class="center-block flight-content">
+                            <form style="font-family:sans-serif;">
+                                <div class="form-group">
+                                    <input type="radio" name="type" checked=""><span>Round-trip </span>
+                                    <input type="radio" name="type"><span>One-way </span></div>
+                                <div class="form-group">
+                                    <input class="form-control location" type="text" placeholder="Departure city" style="display:inline;margin-right:10px;">
+                                    <input class="form-control location" type="text" placeholder="Arrival city" style="display:inline;margin-right:10px;">
                                     <input class="form-control ticket" type="text" placeholder="Ticket class" style="display:inline;">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div>
-                                    <input class="form-control date" type="text" placeholder="Departing date" style="display:inline; margin-right:10px">
-                                    <input class="form-control date" type="text" placeholder="Return date" style="display:inline; margin-right:10px;">
-                                    <input class="form-control date ticket" type="text" placeholder="Adults(12+)" style="display:inline;">
-                                    <input class="form-control date ticket" type="text" placeholder="Children(2-11)" style="display:inline;">
-                                    <input class="form-control date ticket" type="text" placeholder="Infants(<2)" style="display:inline;">
+                                <div class="form-group">
+                                    <input class="form-control date" type="text" name="date" placeholder="Departing date" style="display:inline;margin-right:5px;">
+                                    <input class="form-control date" type="text" name="date" placeholder="Return date" style="display:inline;margin-right:5px;">
+                                    <select class="form-control" style="display:inline; width:16%">
+                                        <option value="0" selected="">Adults (12+)</option>
+                                        <option value="1">1 Adult</option>
+                                        <option value="2">2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                        <option value="4">4 Adults </option>
+                                        <option value="5">5 Adults</option>
+                                        <option value="6">6 Adults</option>
+                                        <option value="7">7 Adults</option>
+                                        <option value="8">8 Adults</option>
+                                        <option value="9">9 Adults</option>
+                                        <option value="10">10 Adults</option>
+                                    </select>
+                                    <select class="form-control" style="display:inline; width:18%;">
+                                        <option value="0" selected="">Children (2-11)</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                        <option value="4">4 Children</option>
+                                        <option value="5">5 Children</option>
+                                        <option value="6">6 Children</option>
+                                        <option value="7">7 Children</option>
+                                        <option value="8">8 Children</option>
+                                        <option value="9">9 Children</option>
+                                        <option value="10">10 Children</option>
+                                    </select>
+                                    <select class="form-control" style="display:inline;">
+                                        <option value="0" selected="">Infants (&lt;2)</option>
+                                        <option value="1">1 Infant</option>
+                                        <option value="2">2 Infants</option>
+                                        <option value="3">3 Infants</option>
+                                        <option value="4">4 Infants </option>
+                                        <option value="5">5 Infants </option>
+                                        <option value="6">6 Infants </option>
+                                        <option value="7">7 Infants </option>
+                                        <option value="8">8 Infants </option>
+                                        <option value="9">9 Infants </option>
+                                        <option value="10">10 Infants </option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="form-group" style="padding-bottom:20px;">
-                                <button class="btn btn-custom pull-right" type="submit">Search </button>
-                            </div>
-                        </form>
-                    </section>
-                </div>
-                <div class="tab-pane" role="tabpanel" id="tab-2">
-                    <p>Second tab content.</p>
+                                <button class="btn btn-custom btn-sm pull-right" type="submit">Search </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" role="tabpanel" id="tab-2" style="border:none;">
+                        <p>First tab content.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="brands">
-        <a href="#"> <img src="assets/img/brand1.jpg"><img src="assets/img/brand2.jpg"><img src="assets/img/brand3.jpg"><img src="assets/img/brand4.jpg"><img src="assets/img/brand5.jpg"><img src="assets/img/brand6.jpg"></a>
+        <div class="visible-xs-block flights">
+            <div>
+                <ul class="nav nav-tabs sm text-center" style="border:none;">
+                    <li class="sm"><a href="#tab-2" role="tab" data-toggle="tab"><i class="fa fa-calendar"></i>Tours </a></li>
+                    <li class="active sm"><a href="#tab-1" role="tab" data-toggle="tab">Flights<img src="assets/img/flight-icon.png"> </a></li>
+                </ul>
+                <div class="tab-content flight" style="border:none;">
+                    <div class="tab-pane fade in active" role="tabpanel" id="tab-1" style="border:none;">
+                        <div class="center-block flight-content">
+                            <form style="font-family:sans-serif;">
+                                <div class="form-group">
+                                    <input type="radio" name="type" checked=""><span>Round-trip </span>
+                                    <input type="radio" name="type"><span>One-way </span></div>
+                                <div class="form-group">
+                                    <input class="form-control location" type="text" placeholder="Departure city" style="display:inline;margin:1px 5px 5px 1px;width:100%;border-color:white;">
+                                    <input class="form-control location" type="text" placeholder="Arrival city" style="display:inline;margin:1px 5px 5px 1px;border-color:white;width:100%;">
+                                    <input class="form-control date" type="text" name="date" placeholder="Departing date" style="display:inline;margin:1px 5px 5px 1px;width:35%;border-color:white;">
+                                    <input class="form-control date" type="text" name="date" placeholder="Return date" style="display:inline;margin:1px 5px 5px 1px;width:35%;border-color:white;">
+                                    <input class="form-control ticket" type="text" placeholder="Ticket class" style="display:inline;margin:1px 5px 5px 1px;width:24%;border-color:white;">
+                                    <select class="form-control" style="display:inline;width:27%;margin:1px 5px 5px 1px;border-color:white;">
+                                        <option value="0" selected="">Adults (12+)</option>
+                                        <option value="1">1 Adult</option>
+                                        <option value="2">2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                        <option value="4">4 Adults </option>
+                                        <option value="5">5 Adults</option>
+                                        <option value="6">6 Adults</option>
+                                        <option value="7">7 Adults</option>
+                                        <option value="8">8 Adults</option>
+                                        <option value="9">9 Adults</option>
+                                        <option value="10">10 Adults</option>
+                                    </select>
+                                    <select class="form-control" style="display:inline;width:27%;margin:1px 5px 5px 1px;border-color:white;">
+                                        <option value="0" selected="">Children (2-11)</option>
+                                        <option value="1">1 Child</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                        <option value="4">4 Children</option>
+                                        <option value="5">5 Children</option>
+                                        <option value="6">6 Children</option>
+                                        <option value="7">7 Children</option>
+                                        <option value="8">8 Children</option>
+                                        <option value="9">9 Children</option>
+                                        <option value="10">10 Children</option>
+                                    </select>
+                                    <select class="form-control" style="display:inline;width:25%;margin:1px 5px 5px 1px;border-color:rgb(255,255,255);">
+                                        <option value="0" selected="">Infants (&lt;2)</option>
+                                        <option value="1">1 Infant</option>
+                                        <option value="2">2 Infants</option>
+                                        <option value="3">3 Infants</option>
+                                        <option value="4">4 Infants </option>
+                                        <option value="5">5 Infants </option>
+                                        <option value="6">6 Infants </option>
+                                        <option value="7">7 Infants </option>
+                                        <option value="8">8 Infants </option>
+                                        <option value="9">9 Infants </option>
+                                        <option value="10">10 Infants </option>
+                                    </select>
+                                    <button class="btn btn-sm-custom btn-sm pull-right" type="submit">Search </button>
+                                </div>
+                                <div class="form-group"></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" role="tabpanel" id="tab-2" style="border:none;">
+                        <p>First tab content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container">
+    <div class="brands" style="margin-top:20px;margin-bottom:30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 col-xs-2"><img class="img-responsive" src="assets/img/brand1.jpg"></div>
+                <div class="col-sm-2 col-xs-2"><img class="img-responsive" src="assets/img/brand2.jpg"></div>
+                <div class="col-sm-2 col-xs-2"><img class="img-responsive" src="assets/img/brand3.jpg"></div>
+                <div class="col-sm-2 col-xs-2"><img class="img-responsive" src="assets/img/brand4.jpg"></div>
+                <div class="col-sm-2 col-xs-2"><img class="img-responsive" src="assets/img/brand5.jpg"></div>
+                <div class="col-sm-2 col-xs-2"><img class="img-responsive" src="assets/img/brand6.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="mainabout">
         <div class="row">
-            <div class="col-sm-11 col-sm-offset-1">
-                <h3>About us</h3></div>
-            <div class="col-sm-5 col-sm-offset-1">
-                <h5 class="strong"><strong>Company Overview</strong></h5>
-                <p class="text-justify">Debusy Comfort Travels Limited is a technology and business solutions provider. Our passion is to conceptualize, design, deliver, and manage technology and business solutions that support our clients’ objectives. We strive to make our
+            <div class="col-md-12 col-sm-12">
+                <h4>About us</h4></div>
+        </div>
+        <div class="row content">
+            <div class="col-sm-6">
+                <p>Debusy Comfort Travels Limited is a technology and business solutions provider. Our passion is to conceptualize, design, deliver, and manage technology and business solutions that support our clients’ objectives. We strive to make our
                     solutions and services simpler thereby ensuring our customers reap greater benefits. That is why we go ...beyond technology. </p>
-                <p class="text-justify">Hopperzlink has partnerships and strategic relationships with technology companies, e-payment switch and processing providers, and other relationships with original equipment manufacturers (OEMs) to provide cutting edge solutions to clients.
+                <p>Hopperzlink has partnerships and strategic relationships with technology companies, e-payment switch and processing providers, and other relationships with original equipment manufacturers (OEMs) to provide cutting edge solutions to clients.
                     </p>
-                <p class="text-justify" style="margin-bottom:30px;">Hopperzlink was setup by a team of professionals &amp; consultants with extensive experiences in technology and business consulting space having worked at Nigerian and international companies. Hopperzlink continues to expand the network
+                <p>Hopperzlink was setup by a team of professionals &amp; consultants with extensive experiences in technology and business consulting space having worked at Nigerian and international companies. Hopperzlink continues to expand the network
                     of skilled and experienced personnel who are able to provide technical and professional services on wide range of technology projects. </p>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-6 hidden-xs">
                 <div>
-                    <h5 class="strong"><strong>Mission Statement</strong></h5>
-                    <p style="margin-bottom:30px;">To provide innovate, agile and sustainable world class solutions</p>
+                    <h5 style="font-weight:600;">Mission Statement</h5>
+                    <p>To provide innovative, agile and sustainable world class solutions.</p>
                 </div>
-                <div>
-                    <h5 class="strong"><strong>Vision Statement</strong></h5>
-                    <p style="margin-bottom:30px;">To be a leader and reference point in the delivery and management of simple and smart solutions for eveyday business and living</p>
+                <div style="margin-top:50px;">
+                    <h5 style="font-weight:600;">Vision Statement</h5>
+                    <p>To be a leader and reference point in the delivery and management of simple and smart solutions for everyday business and living.</p>
                 </div>
-                <div>
-                    <h5 class="strong"><strong>Core Values</strong></h5>
+                <div style="margin-top:50px;">
+                    <h5 style="font-weight:600;">Core values</h5>
                     <ul>
                         <li>We build and sustain rewarding relationships and partnerships</li>
-                        <li>We are focused on expanding the frontiers or innovation</li>
+                        <li>We are focused on expanding the frontiers of innovation</li>
                         <li>We challenge the status quo to deliver better result</li>
-                        <li>Transparency and trust are the core of our business</li>
+                        <li>Transparency and trust are at the core of our business</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="simple-slider">
+    <div class="hidden-xs simple-slider">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image:url(assets/img/bg-1.jpg);"></div>
-                <div class="swiper-slide" style="background-image:url(assets/img/bg-5.jpg);"></div>
-                <div class="swiper-slide" style="background-image:url(assets/img/bg-3.jpg);"></div>
-                <div class="swiper-slide" style="background-image:url(assets/img/bg-4.jpg);"></div>
+                <div class="swiper-slide" style="background-image:url(assets/img/bg1.jpg);"></div>
+                <div class="swiper-slide" style="background-image:url(assets/img/bg2.jpg);"></div>
+                <div class="swiper-slide" style="background-image:url(assets/img/bg3.jpg);"></div>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-prev" style="color:white;"></div>
             <div class="swiper-button-next"></div>
         </div>
     </div>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-11 col-sm-offset-1">
-                    <h3>Tour packages</h3></div>
-                <div class="col-md-12">
-                    <ul class="list-inline text-center">
-                        <li class="h4">All Packages</li>
-                        <li class="h4">Africa </li>
-                        <li class="h4">Asia </li>
-                        <li class="h4">North America</li>
-                        <li class="h4">South America</li>
-                        <li class="h4">Europe </li>
-                        <li class="h4">Oceania </li>
-                    </ul>
-                </div>
+    <div class="container" id="mainpackages">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tour packages</h3></div>
+            <div class="col-md-12">
+                <ul class="list-inline text-center">
+                    <li>All Packages</li>
+                    <li>Africa </li>
+                    <li>Asia </li>
+                    <li>North America</li>
+                    <li>South America</li>
+                    <li>Europe </li>
+                    <li>Oceania </li>
+                </ul>
             </div>
         </div>
-    </section>
-    <div>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="thumbnail"><img src="assets/img/location1.jpg">
-                        <div class="caption">
-                            <h5>2 weeks at marival Residences Luxury Resort</h5>
-                            <ul class="text-left">
-                                <li>Flight (Return) </li>
-                                <li>Boat Ride</li>
-                                <li>Restuarant </li>
-                                <li>Jet Ski</li>
-                            </ul>
-                            <h4 class="text-right">N 200,000.00</h4>
-                            <div style="color:#fff;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"><i class="fa fa-plus buy"></i>Buy </span><a href="#"><span class="pull-left" style="color:#fff">View details</span></a></div>
-                        </div>
+        <div class="row" style="margin-top:25px;">
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail"><img src="assets/img/location1.jpg">
+                    <div class="caption">
+                        <h6>2 weeks at Marival Residences Luxury Resort </h6>
+                        <ul class="text-left h6" style="margin-left:-20px;">
+                            <li>Flight (Return)</li>
+                            <li>Boat ride</li>
+                            <li>Resturant </li>
+                            <li>Jet ski</li>
+                        </ul>
+                        <h5 class="text-right">N200,000.00 </h5>
+                        <div style="color:white;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"> +Buy </span><span class="pull-left" style="color:#fff;">View details</span></div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail"><img src="assets/img/location2.jpg">
-                        <div class="caption">
-                            <h5>2 weeks at marival Residences Luxury Resort</h5>
-                            <ul class="text-left">
-                                <li>Flight (Return) </li>
-                                <li>Boat Ride</li>
-                                <li>Restuarant </li>
-                                <li>Jet Ski</li>
-                            </ul>
-                            <h4 class="text-right">N 500,000.00</h4>
-                            <div style="color:#fff;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"><i class="fa fa-plus buy"></i>Buy </span><a href="#"><span class="pull-left" style="color:#fff">View details</span></a></div>
-                        </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail"><img src="assets/img/location2.jpg">
+                    <div class="caption">
+                        <h6>2 weeks at Marival Residences Luxury Resort </h6>
+                        <ul class="text-left h6" style="margin-left:-20px;">
+                            <li>Flight (Return)</li>
+                            <li>Boat ride</li>
+                            <li>Resturant </li>
+                            <li>Jet ski</li>
+                        </ul>
+                        <h5 class="text-right">N500,000.00 </h5>
+                        <div style="color:white;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"> +Buy </span><span class="pull-left" style="color:#fff;">View details</span></div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail"><img src="assets/img/location3.jpg">
-                        <div class="caption">
-                            <h5>2 weeks at marival Residences Luxury Resort</h5>
-                            <ul class="text-left">
-                                <li>Flight (Return) </li>
-                                <li>Boat Ride</li>
-                                <li>Restuarant </li>
-                                <li>Jet Ski</li>
-                            </ul>
-                            <h4 class="text-right">N 250,000.00</h4>
-                            <div style="color:#fff;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"><i class="fa fa-plus buy"></i>Buy </span><a href="#"><span class="pull-left" style="color:#fff">View details</span></a></div>
-                        </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail"><img src="assets/img/location3.jpg">
+                    <div class="caption">
+                        <h6>2 weeks at Marival Residences Luxury Resort </h6>
+                        <ul class="text-left h6" style="margin-left:-20px;">
+                            <li>Flight (Return)</li>
+                            <li>Boat ride</li>
+                            <li>Resturant </li>
+                            <li>Jet ski</li>
+                        </ul>
+                        <h5 class="text-right">N250,000.00 </h5>
+                        <div style="color:white;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"> +Buy </span><span class="pull-left" style="color:#fff;">View details</span></div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail"><img src="assets/img/location1.jpg">
-                        <div class="caption">
-                            <h5>2 weeks at marival Residences Luxury Resort</h5>
-                            <ul class="text-left">
-                                <li>Flight (Return) </li>
-                                <li>Boat Ride</li>
-                                <li>Restuarant </li>
-                                <li>Jet Ski</li>
-                            </ul>
-                            <h4 class="text-right">N 800,000.00</h4>
-                            <div style="color:#fff;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"><i class="fa fa-plus buy"></i>Buy </span><a href="#"><span class="pull-left" style="color:#fff">View details</span></a></div>
-                        </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail"><img src="assets/img/location1.jpg">
+                    <div class="caption">
+                        <h6>2 weeks at Marival Residences Luxury Resort </h6>
+                        <ul class="text-left h6" style="margin-left:-20px;">
+                            <li>Flight (Return)</li>
+                            <li>Boat ride</li>
+                            <li>Resturant </li>
+                            <li>Jet ski</li>
+                        </ul>
+                        <h5 class="text-right">N800,000.00 </h5>
+                        <div style="color:white;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"> +Buy </span><span class="pull-left" style="color:#fff;">View details</span></div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail"><img src="assets/img/location2.jpg">
-                        <div class="caption">
-                            <h5>2 weeks at marival Residences Luxury Resort</h5>
-                            <ul class="text-left">
-                                <li>Flight (Return) </li>
-                                <li>Boat Ride</li>
-                                <li>Restuarant </li>
-                                <li>Jet Ski</li>
-                            </ul>
-                            <h4 class="text-right">N 1,200,000.00</h4>
-                            <div style="color:#fff;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"><i class="fa fa-plus buy"></i>Buy </span><a href="#"><span class="pull-left" style="color:#fff">View details</span></a></div>
-                        </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail"><img src="assets/img/location2.jpg">
+                    <div class="caption">
+                        <h6>2 weeks at Marival Residences Luxury Resort </h6>
+                        <ul class="text-left h6" style="margin-left:-20px;">
+                            <li>Flight (Return)</li>
+                            <li>Boat ride</li>
+                            <li>Resturant </li>
+                            <li>Jet ski</li>
+                        </ul>
+                        <h5 class="text-right">N1,200,000.00 </h5>
+                        <div style="color:white;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"> +Buy </span><span class="pull-left" style="color:#fff;">View details</span></div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail"><img src="assets/img/location3.jpg">
-                        <div class="caption">
-                            <h5>2 weeks at marival Residences Luxury Resort</h5>
-                            <ul class="text-left">
-                                <li>Flight (Return) </li>
-                                <li>Boat Ride</li>
-                                <li>Restuarant </li>
-                                <li>Jet Ski</li>
-                            </ul>
-                            <h4 class="text-right">N 400,000.00</h4>
-                            <div style="color:#fff;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"><i class="fa fa-plus buy"></i>Buy </span><a href="#"><span class="pull-left" style="color:#fff">View details</span></a></div>
-                        </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="thumbnail"><img src="assets/img/location3.jpg">
+                    <div class="caption">
+                        <h6>2 weeks at Marival Residences Luxury Resort </h6>
+                        <ul class="text-left h6" style="margin-left:-20px;">
+                            <li>Flight (Return)</li>
+                            <li>Boat ride</li>
+                            <li>Resturant </li>
+                            <li>Jet ski</li>
+                        </ul>
+                        <h5 class="text-right">N400,000.00 </h5>
+                        <div style="color:white;padding:10px 2px 20px 2px;"><span class="buy-box pull-right"> +Buy </span><span class="pull-left" style="color:#fff;">View details</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="contact">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-11 col-sm-offset-1">
-                    <div style="color:white; margin-bottom:40px; margin-top:40px">
-                        <h3>Contact Us</h3></div>
-                </div>
-                <div class="col-sm-5 col-sm-offset-1">
-                    <div style="color:white;margin-bottom:40px;">
-                        <h5>50A Grace Anjous Driver,</h5>
-                        <h5>Off Admiirality Way,</h5>
-                        <h5>Lekki Phase 1,</h5>
-                        <h5>Lagos </h5></div>
-                    <div style="color:white;margin-bottom:40px;">
-                        <h5>info@debusytravels.com </h5></div>
-                    <div style="color:white;">
-                        <h5>+234 8092313928</h5></div>
-                </div>
-                <div class="col-sm-4">
-                    <div style="color:#111;">
-                        <form>
-                            <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Full Name">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Phone Number">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="Comment"></textarea>
-                            </div>
-                            <div class="form-group" style="padding-bottom:20px;">
-                                <button class="btn btn-custom pull-right" type="submit">Submit </button>
-                            </div>
-                        </form>
+    <div class="container-fluid footer" id="maincontact">
+        <div class="row hidden-xs">
+            <div class="col-sm-11 col-sm-offset-1">
+                <div style="color:white;margin:40px 0px;">
+                    <h4>Contact Us</h4></div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <div style="color:white;margin-bottom:40px;">
+                    <h5>50A Grace Anjous Drive</h5>
+                    <h5>Off Admirality Way</h5>
+                    <h5>Lekki Phase 1</h5>
+                    <h5>Lagos </h5></div>
+                <div style="color:white;margin-bottom:40px;">
+                    <h5>info@debusytravels.com </h5></div>
+                <div style="color:white;margin-bottom:40px;">
+                    <h5>+234 8092313928</h5></div>
+            </div>
+            <div class="col-sm-5 col-xs-8">
+                <form>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Full Name">
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <div style="color:white;">
-                        <div class="social-icons"><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Email">
                     </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="Comment"></textarea>
+                    </div>
+                    <div class="form-group" style="padding-bottom:20px;">
+                        <button class="btn btn-custom pull-right" type="submit">Button</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12">
+                <div style="color:white;">
+                    <div class="social-icons"><a href="#">Link<i class="fa fa-facebook"></i></a><a href="#">Link<i class="fa fa-twitter"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row visible-xs-block">
+            <div class="col-sm-11 col-sm-offset-1 col-xs-11">
+                <div style="color:white;margin:40px 0px;">
+                    <h4>Contact Us</h4></div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1 col-xs-6 col-xs-offset-0">
+                <div style="color:white;margin-bottom:40px;">
+                    <h6>50A Grace Anjous Drive</h6>
+                    <h6>Off Admirality Way</h6>
+                    <h6>Lekki Phase 1</h6>
+                    <h6>Lagos </h6></div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1 col-xs-5 col-xs-offset-0">
+                <div style="color:white;margin-bottom:40px;">
+                    <h6>info@debusytravels.com </h6></div>
+                <div style="color:white;margin-bottom:40px;">
+                    <h6>+234 8092313928</h6></div>
+            </div>
+            <div class="col-sm-12">
+                <div style="color:white;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-xs-6 visible-xs-block">
+                <form>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group"></div>
+                </form>
+            </div>
+            <div class="col-sm-5 col-xs-6 visible-xs-block">
+                <form>
+                    <div class="form-group"></div>
+                    <div class="form-group"></div>
+                    <div class="form-group"></div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="6" placeholder="Comment" style="margin-top:-15px;"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 visible-xs-block">
+                <div class="social-icons">
+                    <button class="btn btn-custom" type="submit">Submit</button>
+                </div>
+                <div class="social-icons"><a href="#">Link<i class="fa fa-facebook"></i></a><a href="#">Link<i class="fa fa-twitter"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid copyright" style="background-color:#000;min-height:100px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="color:white;">
+                    <footer style="margin-top:20px;">
+                        <p class="small text-center" style="font-size:0.7em;color:#999;">Copyright 2016 Debusy Comfort Travels Limited. All rights reserved </p>
+                    </footer>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <footer class="text-center">
-                <p>Copyright 2016 Debusy Comfort Travels Limited. All rights reserved</p>
-            </footer>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.24/daterangepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
