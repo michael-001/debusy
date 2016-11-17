@@ -149,6 +149,11 @@ a {
   content:url(../../assets/img/radiobox_checked.png);
 }
 
+div.flight-content.md {
+  width:70%;
+  padding-top:10px;
+}
+
 div.flight-content {
   width:96%;
   padding-top:10px;
@@ -465,6 +470,29 @@ div#ui-datepicker-div {
   max-height:30px;
 }
 
+.brands {
+  color:#313437;
+  background-color:#fff;
+}
+
+.brands a {
+  display:block;
+  text-align:center;
+  padding:40px 0;
+}
+
+@media (max-width:767px) {
+  .brands a {
+    padding:30px 0;
+  }
+}
+
+.brands a img {
+  display:inline-block;
+  margin:10px 20px;
+  vertical-align:middle;
+}
+
 .simple-slider .swiper-slide {
   height:700px;
   background-repeat:no-repeat;
@@ -488,125 +516,5 @@ div#ui-datepicker-div {
   .simple-slider .swiper-slide {
     height:360px;
   }
-}
-
-.social-icons {
-  color:#ffffff;
-  text-align:center;
-  padding:30px 0;
-}
-
-@media (max-width:767px) {
-  .social-icons {
-    padding:10px 0;
-  }
-}
-
-.social-icons i {
-  font-size:30px;
-  display:inline-block;
-  color:#ffffff;
-  margin:0 10px;
-  width:40px;
-  height:40px;
-  border:1px solid #ffffff;
-  text-align:center;
-  border-radius:50%;
-  line-height:40px;
-}
-
-div.row {
-  font-family:Open Sans;
-}
-
-* {
-  margin:0;
-}
-
-footer {
-  box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing:border-box;
-  width:100%;
-  text-align:left;
-  font:bold 16px sans-serif;
-  padding:25px 75px;
-  bottom:0;
-  position:fixed;
-  font-size:11px;
-  font-family:'Open Sans', sans-serif;
-}
-
-footer {
-  position:relative;
-  padding:40px 40px;
-}
-
-footer > p {
-  color:#ffffff;
-}
-
-* {
-  margin:0;
-}
-
-* {
-  margin:0;
-}
-
-footer, .wrapper:after {
-  height:32px;
-}
-
-footer {
-  background-color:#000000;
-  box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing:border-box;
-  width:100%;
-  text-align:left;
-  font:bold 16px sans-serif;
-  padding:10px;
-  bottom:0;
-  color:#ffffff;
-}
-
-footer {
-  box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing:border-box;
-  width:100%;
-  text-align:left;
-  font:bold 16px sans-serif;
-  padding:25px 75px;
-  bottom:0;
-  position:fixed;
-  font-size:11px;
-  font-family:'Open Sans', sans-serif;
-}
-
-footer {
-  position:relative;
-  padding:15px 0px 70px 0px;
-}
-
-.brands {
-  color:#313437;
-  background-color:#fff;
-}
-
-.brands a {
-  display:block;
-  text-align:center;
-  padding:40px 0;
-}
-
-@media (max-width:767px) {
-  .brands a {
-    padding:30px 0;
-  }
-}
-
-.brands a img {
-  display:inline-block;
-  margin:10px 20px;
-  vertical-align:middle;
 }
 
